@@ -2,5 +2,5 @@
 
 * Next.js version : "7.0.3"
 * with Typescript
-* state management : MobX
+* state management : Apollo Link State
 * React UI library : Ant Design + less
