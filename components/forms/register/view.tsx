@@ -13,14 +13,24 @@ export default (props: any) => {
 			<A.Form className="login-form">
 				<A.Form.Item>
 					<A.Input
-						prefix={<A.Icon type="user" className="input-icon" />}
 						placeholder="E-mail"
 						className="input-field input-elements"
 					/>
 				</A.Form.Item>
 				<A.Form.Item>
 					<A.Input
-						prefix={<A.Icon type="lock" className="input-icon" />}
+						placeholder="Firstname"
+						className="input-field input-elements"
+					/>
+				</A.Form.Item>
+				<A.Form.Item>
+					<A.Input
+						placeholder="Lastname"
+						className="input-field input-elements"
+					/>
+				</A.Form.Item>
+				<A.Form.Item>
+					<A.Input
 						className="input-field input-elements"
 						type="password"
 						placeholder="Hasło"

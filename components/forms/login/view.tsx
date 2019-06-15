@@ -24,15 +24,16 @@ export default () => {
 					placeholder="Password"
 				/>
 			</Ant.Form.Item>
-			<div className="button-surroundings">
+			<Ant.Form.Item
+			 >
 				{/* <a className="login-form-forgot" href={routes.resetPassword}>
 						Forgot password?
 					</a> */}
-				<Ant.Button type="primary" htmlType="submit" className="login-form-button">
+				<Ant.Button block type="primary" htmlType="submit" >
 					Login
 				</Ant.Button>
 				{/* or <a href={routes.signUp}>register</a> */}
-			</div>
+			</Ant.Form.Item>
 			<div className="form--remeber-me">
 				<Ant.Checkbox>Remember me</Ant.Checkbox>
 			</div>
