@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Ant from 'antd';
 import '../form.less';
 
-export default () => {
-	const [ email, setEmail ] = useState('');
-	const [ password, setPassword ] = useState('');
-	const [ rememberMe, setRememberMe ] = useState(false);
-
+export default (props) => {
 	return (
-		<Ant.Form className="login-form" layout="horizontal">
+		<Ant.Form
+			className="login-form"
+			layout="horizontal"
+			onSubmit={(e) => {
+				e.preventDefault();
+				props.onSubmit();
+			}}
+		>
 			<Ant.Form.Item>
 				<Ant.Input
 					prefix={<Ant.Icon type="user" className="input-icon" />}
 					placeholder="E-mail"
 					className="input-field input-elements"
+					onChange={(e) => props.updateValue('email', e.target.value)}
 				/>
 			</Ant.Form.Item>
 			<Ant.Form.Item>
@@ -21,18 +25,14 @@ export default () => {
 					prefix={<Ant.Icon type="lock" className="input-icon" />}
 					className="input-field input-elements"
 					type="password"
-					placeholder="Password"
+					placeholder="********"
+					onChange={(e) => props.updateValue('password', e.target.value)}
 				/>
 			</Ant.Form.Item>
-			<Ant.Form.Item
-			 >
-				{/* <a className="login-form-forgot" href={routes.resetPassword}>
-						Forgot password?
-					</a> */}
-				<Ant.Button block type="primary" htmlType="submit" >
+			<Ant.Form.Item>
+				<Ant.Button block type="primary" htmlType="submit">
 					Login
 				</Ant.Button>
-				{/* or <a href={routes.signUp}>register</a> */}
 			</Ant.Form.Item>
 			<div className="form--remeber-me">
 				<Ant.Checkbox>Remember me</Ant.Checkbox>

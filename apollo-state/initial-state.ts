@@ -1,3 +1,9 @@
 export const initialState = {
-	selectedRepositoryIds: []
+	selectedRepositoryIds: [],
+	user: {
+		email: null,
+		password: null,
+		name: null,
+		__typename: 'User'
+	}
 };

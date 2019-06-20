@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import './index.less';
+// import './index.less';
 import { Layout, Menu } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
