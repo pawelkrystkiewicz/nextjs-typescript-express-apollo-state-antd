@@ -1,22 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { withTranslation } from '../localization/i18n';
 
 interface IError {
-    statusCode: number
+	statusCode: number;
 }
 
-export default class Error extends React.Component<IError> {
-  static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-    return { statusCode }
-  }
+class ErrorPage extends React.Component<IError> {
+	static async getInitialProps({ res, err }) {
+		const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+		return { statusCode, namespacesRequired: [ 'common', 'errors' ] };
+	}
 
-  render() {
-    return (
-      <p>
-        {this.props.statusCode
-          ? `An error ${this.props.statusCode} occurred on server`
-          : 'An error occurred on client'}
-      </p>
-    )
-  }
+	render() {
+		const { t, statusCode } = this.props;
+		return <p>{t('unexpected-error') + { statusCode }}</p>;
+	}
 }
+
+export default withTranslation('common')(ErrorPage);

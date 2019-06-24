@@ -3,6 +3,7 @@ import React from 'react';
 import withApolloClient from '../lib/with-apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient } from 'apollo-boost';
+import { appWithTranslation } from '../localization/i18n';
 
 interface IProps {
 	apolloClient: ApolloClient<Cache>;
@@ -24,4 +25,4 @@ class MyApp extends App<IProps> {
 	}
 }
 
-export default withApolloClient(MyApp);
+export default appWithTranslation(withApolloClient(MyApp));

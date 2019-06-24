@@ -37,6 +37,10 @@ export default (props) => {
 			<div className="form--remeber-me">
 				<Ant.Checkbox>Remember me</Ant.Checkbox>
 			</div>
+			{!!props.error && (
+				<div>{!!props.error && <Ant.Alert message={props.error[0].message} type="error" showIcon />}</div>
+			)}
+			{!!props.networkError && <Ant.Alert message={props.networkError.message} type="error" showIcon />}
 		</Ant.Form>
 	);
 };

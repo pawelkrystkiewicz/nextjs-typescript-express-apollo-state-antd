@@ -7,8 +7,8 @@ import { cache, stateLink } from '../apollo-state';
 let apolloClient = null;
 
 const link = new HttpLink({
-	name: `github`,
-	uri: URL,
+	name: `api`,
+	uri: '',
 	// headers: {
 	// 	authorization: `Bearer ${token}`
 	// },

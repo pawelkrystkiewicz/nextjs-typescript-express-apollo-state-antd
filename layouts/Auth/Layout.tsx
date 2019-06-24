@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import {Link} from '../../localization/i18n';
 // import './index.less';
 import { Layout, Menu } from 'antd';
 

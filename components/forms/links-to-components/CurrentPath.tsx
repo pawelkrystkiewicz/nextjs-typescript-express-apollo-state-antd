@@ -3,6 +3,7 @@ import colors from '../../../styles/colors';
 // typically you want to use `next/link` for this usecase
 // but this example shows how you can also access the router
 // using the withRouter utility.
+import { Router } from '../../../localization/i18n';
 
 const CurrentPath = ({ children, router, href }) => {
 	const style = {
@@ -12,7 +13,7 @@ const CurrentPath = ({ children, router, href }) => {
 
 	const handleClick = (e) => {
 		e.preventDefault();
-		router.push(href);
+		Router.push(href);
 	};
 
 	return (
